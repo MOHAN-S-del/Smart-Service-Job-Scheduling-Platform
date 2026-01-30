@@ -1,115 +1,108 @@
-#include <bits/stdc++.h>
-using namespace std;
+A Greedy Algorithm–Based Job Scheduling System
+📌 Overview
 
-struct Worker {
-    int id;
-    int distance;
-    int rating;
-    int price;
-    int jobsAssigned;
-};
+SkillConnect is a Design and Analysis of Algorithms (DAA)–focused project that demonstrates how greedy optimization and scheduling algorithms can be applied to a real-world service marketplace.
+The system connects consumers with nearby skilled workers (electricians, carpenters, helpers, engineers) and optimizes job assignment based on deadlines, distance, rating, and workload.
 
-struct Job {
-    int id;
-    int deadline;
-    int profit;
-};
+🎯 Objective
 
-/* ---------- Sorting Workers (Ranking) ---------- */
-bool compareWorkers(Worker a, Worker b) {
-    if (a.rating != b.rating)
-        return a.rating > b.rating;     // higher rating first
-    if (a.price != b.price)
-        return a.price < b.price;       // lower price first
-    return a.distance < b.distance;     // nearer first
-}
+The primary objective of this project is to:
 
-/* ---------- Greedy Job Scheduling ---------- */
-void jobScheduling(vector<Job>& jobs) {
-    sort(jobs.begin(), jobs.end(), [](Job a, Job b) {
-        return a.profit > b.profit;
-    });
+Efficiently allocate jobs to skilled workers
 
-    int maxDeadline = 0;
-    for (auto j : jobs)
-        maxDeadline = max(maxDeadline, j.deadline);
+Ensure jobs are completed within deadlines
 
-    vector<int> slot(maxDeadline + 1, -1);
-    int totalProfit = 0;
+Minimize waiting time and worker overload
 
-    cout << "\nScheduled Jobs:\n";
-    for (auto j : jobs) {
-        for (int t = j.deadline; t > 0; t--) {
-            if (slot[t] == -1) {
-                slot[t] = j.id;
-                totalProfit += j.profit;
-                cout << "Job " << j.id << " scheduled at time " << t << endl;
-                break;
-            }
-        }
-    }
+Demonstrate practical usage of DAA concepts
 
-    cout << "Total Profit: " << totalProfit << endl;
-}
+🧠 Core DAA Concepts Used
+Algorithm / Concept	Purpose
+Greedy Job Scheduling	Assign jobs before deadlines
+Sorting Algorithms	Rank workers by rating, price, distance
+Shortest Path / Distance Greedy	Find nearest workers
+Deadline-Based Scheduling	Handle job expiry and reassignment
+Load Balancing	Distribute jobs fairly among workers
+🏗 System Architecture
 
-/* ---------- Nearest Worker Selection ---------- */
-Worker findNearestWorker(vector<Worker>& workers) {
-    Worker nearest = workers[0];
-    for (auto w : workers) {
-        if (w.distance < nearest.distance)
-            nearest = w;
-    }
-    return nearest;
-}
+High-Level Components:
 
-/* ---------- Load Balancing ---------- */
-Worker selectLeastLoadedWorker(vector<Worker>& workers) {
-    Worker selected = workers[0];
-    for (auto w : workers) {
-        if (w.jobsAssigned < selected.jobsAssigned)
-            selected = w;
-    }
-    return selected;
-}
+Consumer Interface (Job Requests)
 
-int main() {
-    /* Workers Data */
-    vector<Worker> workers = {
-        {1, 5, 4, 300, 1},
-        {2, 3, 5, 400, 0},
-        {3, 8, 3, 250, 2}
-    };
+Algorithm Engine (DAA Core Logic)
 
-    /* Jobs Data */
-    vector<Job> jobs = {
-        {1, 2, 100},
-        {2, 1, 50},
-        {3, 3, 70}
-    };
+Database Layer (Workers, Jobs, Ratings)
 
-    /* Worker Ranking */
-    sort(workers.begin(), workers.end(), compareWorkers);
+Worker Interface (Accept / Reject Jobs)
 
-    cout << "Ranked Workers:\n";
-    for (auto w : workers) {
-        cout << "Worker " << w.id
-             << " | Rating: " << w.rating
-             << " | Price: " << w.price
-             << " | Distance: " << w.distance << endl;
-    }
+The Algorithm Engine is responsible for all optimization and scheduling decisions.
 
-    /* Nearest Worker */
-    Worker nearest = findNearestWorker(workers);
-    cout << "\nNearest Worker ID: " << nearest.id << endl;
+🔄 Workflow
 
-    /* Job Scheduling */
-    jobScheduling(jobs);
+Consumer posts a job with location, type, and deadline
 
-    /* Load Balancing */
-    Worker balanced = selectLeastLoadedWorker(workers);
-    cout << "\nLeast Loaded Worker ID: " << balanced.id << endl;
+System identifies nearby workers
 
-    return 0;
-}
-# Smart-Service-Job-Scheduling-Platform
-Designed a greedy algorithm-based job scheduling system to optimize worker allocation, deadlines, and service efficiency.
+Workers are ranked based on rating, price, and distance
+
+Greedy algorithm schedules the job within deadline constraints
+
+If a deadline is missed, the job is reassigned
+
+Load balancing ensures fair job distribution
+
+⏱ Time & Space Complexity (Summary)
+
+Job Scheduling: O(n log n)
+
+Worker Ranking (Sorting): O(n log n)
+
+Nearest Worker Selection: O(n log n)
+
+Space Complexity: O(n)
+
+🛠 Technology Stack
+
+Language: C++
+
+Paradigm: Greedy Algorithms, Graph Concepts, Sorting
+
+Tools: GCC, VS Code
+
+Platform: Console-based (algorithm-centric)
+
+📂 Project Structure
+SkillConnect/
+│── main.cpp
+│── README.md
+
+👥 Team Contributions
+Name	Responsibility
+Mohan	Job Scheduling & Deadline Management
+Manan	Nearest Worker Selection
+Keshav	Worker Ranking Algorithms
+Himanshu	Load Balancing Optimization
+📌 Applications
+
+Local service booking platforms
+
+Cloud task scheduling systems
+
+Deadline-based real-time systems
+
+Resource allocation and optimization problems
+
+🚀 Future Enhancements
+
+Real-time GPS-based distance calculation
+
+Web or mobile interface integration
+
+Dynamic pricing models
+
+Machine learning-based worker recommendations
+
+📝 Conclusion
+
+SkillConnect showcases how Design and Analysis of Algorithms can be effectively applied to solve real-world optimization problems.
+The project emphasizes algorithmic efficiency, scalability, and fairness in job allocation.
