@@ -1,4 +1,4 @@
-A Greedy Algorithm–Based Job Scheduling System
+**A Greedy Algorithm–Based Job Scheduling System
 📌 Overview
 
 SkillConnect is a Design and Analysis of Algorithms (DAA)–focused project that demonstrates how greedy optimization and scheduling algorithms can be applied to a real-world service marketplace.
@@ -106,3 +106,4 @@ Machine learning-based worker recommendations
 
 SkillConnect showcases how Design and Analysis of Algorithms can be effectively applied to solve real-world optimization problems.
 The project emphasizes algorithmic efficiency, scalability, and fairness in job allocation.
+**
