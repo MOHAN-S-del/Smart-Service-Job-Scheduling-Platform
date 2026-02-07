@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Scheduler</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background: #ffffff;
+            width: 90%;
+            max-width: 600px;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .jobs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .job-card {
+            padding: 15px;
+            border: 2px solid #667eea;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .job-card:hover {
+            background: #667eea;
+            color: #fff;
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 480px) {
+            .jobs {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Job Scheduler</h1>
+        <p>What are you looking for?</p>
+
+        <div class="jobs">
+            <div class="job-card">Carpenter</div>
+            <div class="job-card">Plumber</div>
+            <div class="job-card">Electrician</div>
+            <div class="job-card">Washer</div>
+            <div class="job-card">Barber</div>
+            <div class="job-card">Other</div>
+        </div>
+    </div>
+
+</body>
+</html>
