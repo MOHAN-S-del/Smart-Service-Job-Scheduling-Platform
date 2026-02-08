@@ -87,26 +87,26 @@ Our system achieves five primary goals through intelligent algorithmic design:
 │                    🎯 SkillConnect System                       │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
-│  ┌────────────────────┐         ┌────────────────────┐        │
-│  │  📅 Job Scheduler  │────────▶│  👥 Worker Manager │        │
-│  │   (EDF Greedy)     │         │  (Multi-criteria)  │        │
-│  └────────────────────┘         └────────────────────┘        │
-│           │                               │                    │
-│           ▼                               ▼                    │
-│  ┌────────────────────────────────────────────────────┐       │
-│  │       ⚖️ Load Balancing Engine (Min-Heap)         │       │
-│  │    ✓ Fair workload distribution                   │       │
-│  │    ✓ Prevent worker overload                      │       │
-│  │    ✓ O(n log m) assignment complexity             │       │
-│  └────────────────────────────────────────────────────┘       │
-│           │                                                    │
-│           ▼                                                    │
-│  ┌────────────────────────────────────────────────────┐       │
-│  │       ⏰ Deadline Management System                │       │
-│  │    ✓ Real-time miss detection                     │       │
-│  │    ✓ Intelligent reassignment                     │       │
-│  │    ✓ Greedy recovery strategy                     │       │
-│  └────────────────────────────────────────────────────┘       │
+│  ┌────────────────────┐         ┌────────────────────┐          │
+│  │  📅 Job Scheduler  │────────▶│  👥 Worker Manager │         │
+│  │   (EDF Greedy)     │         │  (Multi-criteria)  │          │
+│  └────────────────────┘         └────────────────────┘          │
+│           │                               │                     │
+│           ▼                               ▼                     │
+│  ┌────────────────────────────────────────────────────┐         │
+│  │       ⚖️ Load Balancing Engine (Min-Heap)          │         │
+│  │    ✓ Fair workload distribution                    │         │
+│  │    ✓ Prevent worker overload                       │         │
+│  │    ✓ O(n log m) assignment complexity              │         │
+│  └────────────────────────────────────────────────────┘         │
+│           │                                                     │
+│           ▼                                                     │
+│  ┌────────────────────────────────────────────────────┐         │
+│  │       ⏰ Deadline Management System                │         │
+│  │    ✓ Real-time miss detection                      │         │
+│  │    ✓ Intelligent reassignment                      │         │
+│  │    ✓ Greedy recovery strategy                      │         │
+│  └────────────────────────────────────────────────────┘         │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
