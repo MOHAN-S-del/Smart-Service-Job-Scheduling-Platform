@@ -1,0 +1,12 @@
+SKILLCONNECT - GREEDY JOB SCHEDULING RESULT
+-------------------------------------------
+Total Jobs: 8
+Scheduled Jobs: 3
+Reassigned Jobs: 3
+Total Profit: 246
+
+Top Scheduled Job
+Job ID: 7
+Deadline: 2
+Profit: 35
+Selected using Greedy Algorithm
