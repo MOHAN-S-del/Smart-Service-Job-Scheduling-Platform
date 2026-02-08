@@ -1,26 +1,36 @@
-/* job_scheduler.h - Function prototypes for greedy job scheduling */
+/*
+ * job_scheduler.h
+ * Function declarations for Greedy Job Scheduling Algorithm
+ * Design and Analysis of Algorithms (DAA) Project
+ */
 
 #ifndef JOB_SCHEDULER_H
 #define JOB_SCHEDULER_H
 
+#include <vector>
 #include "job.h"
 
-/* Schedule jobs using greedy algorithm to maximize profit */
-void scheduleJobs(Job jobs[], int n);
+using namespace std;
 
-/* Sort jobs by profit in descending order (helper function) */
-void sortJobsByProfit(Job jobs[], int n);
+/**
+ * Schedule jobs using greedy algorithm to maximize profit
+ * Greedy choice: select highest-profit job first
+ */
+void scheduleJobs(vector<Job>& jobs);
 
-/* Find maximum deadline among all jobs */
-int findMaxDeadline(Job jobs[], int n);
+/**
+ * Display scheduled and missed jobs
+ */
+void displaySchedule(const vector<Job>& jobs);
 
-/* Display scheduled jobs */
-void displaySchedule(Job jobs[], int n);
+/**
+ * Display details of a single job
+ */
+void displayJob(const Job& job);
 
-/* Display job details */
-void displayJob(Job job);
+/**
+ * Calculate total profit from scheduled jobs
+ */
+int calculateTotalProfit(const vector<Job>& jobs);
 
-/* Calculate total profit from scheduled jobs */
-int calculateTotalProfit(Job jobs[], int n);
-
-#endif
+#endif // JOB_SCHEDULER_H

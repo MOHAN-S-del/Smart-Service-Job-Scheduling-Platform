@@ -1,17 +1,26 @@
-/* job.h - Job structure for greedy job scheduling */
+/*
+ * job.h
+ * Job structure for Greedy Job Scheduling
+ * Design and Analysis of Algorithms (DAA) Project
+ */
 
 #ifndef JOB_H
 #define JOB_H
 
-/* Job structure for job sequencing with deadlines */
-typedef struct {
-    int jobId;      
-    int deadline;   
-    int profit;     
-    int status;     /* 0=Pending, 1=Scheduled, 2=Missed */
-} Job;
+/**
+ * Job structure
+ * Represents a job with deadline and profit
+ */
+struct Job {
+    int jobId;      // Unique job identifier
+    int deadline;   // Deadline before which job must be completed
+    int profit;     // Profit earned if job is completed
+    int status;     // 0 = Pending, 1 = Scheduled, 2 = Missed
+};
 
-/* Function to initialize a job */
-void initJob(Job* job, int id, int deadline, int profit);
+/**
+ * Initialize a job with given values
+ */
+void initJob(Job& job, int id, int deadline, int profit);
 
-#endif
+#endif // JOB_H
